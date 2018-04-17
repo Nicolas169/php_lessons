@@ -25,21 +25,29 @@
 	</form>
 	-->
 	<br>
-	<form class="container">
+	<form method="POST" class="container">
 	  <div class="form-group">
 	    <label for="formGroupExampleInput">Insert a number</label>
-	    <input type="number" class="form-control" id="formGroupInput" placeholder="Example: 2">
+	    <input type="number" name="num1" class="form-control" id="formGroupInput" placeholder="Example: 2">
 	  </div>
 	  <div class="form-group">
 	    <label for="formGroupExampleInput2">Insert another number</label>
-	    <input type="number" class="form-control" id="formGroupInput2" placeholder="Example: 3">
+	    <input type="number" name="num2" class="form-control" id="formGroupInput2" placeholder="Example: 3">
 	  </div>
-	  
-	  <center><button type="submit" class="btn btn-primary">=</button></center>
+	  <div class="form-group">
+	  	<label for="selectOperation">Select operation</label>
+	  	<select class="form-control" name="op">
+	  		<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+	  	</select>
+	  </div>
+	  <center><button class="btn btn-primary">=</button></center>
 	</form>
 
 	<?php
-		error_reporting(0);
+		error_reporting(E_ERROR | E_WARNING | E_PARSE);
 		$num1 = $_POST['num1'];
 		$num2 = $_POST['num2'];
 		$res = 0;
